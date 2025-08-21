@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mejores Prácticas de Diseño de Software</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --info: #17a2b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 20px 0 10px;
+        }
+        
+        .intro {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .principle {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .principle h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 5px 5px 5px 0;
+        }
+        
+        .solid-principle {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid var(--info);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--dark);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mejores Prácticas de Diseño de Software</h1>
+        <p>Principios y metodologías para desarrollar software de calidad</p>
+    </header>
+    
+    <section class="intro">
+        <h2>Introducción</h2>
+        <p>El diseño de software es una fase crucial en el desarrollo de aplicaciones que implica la aplicación de técnicas y principios para bosquejar la estructura de los componentes con suficiente detalle, permitiendo su interpretación y construcción. La base del diseño se encuentra en los requerimientos y su análisis.</p>
+    </section>
+    
+    <h2>Metodologías de Desarrollo</h2>
+    <div class="grid-container">
+        <div class="card">
+            <div class="card-header">Elección de Metodología</div>
+            <div class="card-body">
+                <p>Es vital seleccionar la metodología que mejor se adapte a las necesidades del proyecto, el tipo de equipo de trabajo, el presupuesto y el plazo disponible.</p>
+                <span class="tag">Waterfall</span>
+                <span class="tag">Agile</span>
+                <span class="tag">Scrum</span>
+                <span class="tag">Nexus</span>
+                <span class="tag">Kanban</span>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Metodologías Ágiles</div>
+            <div class="card-body">
+                <p>Estrategia integral que fragmenta los proyectos en partes adaptables, permitiendo flexibilidad y rapidez.</p>
+                <ul>
+                    <li>Entregas rápidas y continuas</li>
+                    <li>Trabajo colaborativo</li>
+                    <li>Predicción de resultados</li>
+                    <li>Minimización de riesgos</li>
+                    <li>Cliente como parte del equipo</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">DevOps</div>
+            <div class="card-body">
+                <p>Conjunto de mejores prácticas que fusiona el desarrollo y las operaciones de software, buscando entregar aplicaciones más rápido mediante la automatización.</p>
+                <span class="tag">Automatización</span>
+                <span class="tag">Entrega continua</span>
+                <span class="tag">Colaboración</span>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Principios de Diseño y Codificación</h2>
+    <div class="grid-container">
+        <div class="card">
+            <div class="card-header">Legibilidad y Código Limpio</div>
+            <div class="card-body">
+                <p>Considerada una característica de alta calidad, reduce errores y aumenta la estabilidad del software.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Refactorización Frecuente</div>
+            <div class="card-body">
+                <p>Modificar o reestructurar el código existente para que sea más fácil de entender, mantener y cambiar.</p>
+                <p>Ayuda a reducir la deuda técnica.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Principios Fundamentales</div>
+            <div class="card-body">
+                <div class="principle">
+                    <h4>KISS (Keep It Simple, Stupid)</h4>
+                    <p>Evita que los desarrolladores compliquen las soluciones más de lo necesario.</p>
+                </div>
+                
+                <div class="principle">
+                    <h4>YAGNI (You Aren't Gonna Need It)</h4>
+                    <p>Desaconseja añadir funcionalidades para requisitos futuros que quizás no sean necesarios.</p>
+                </div>
+                
+                <div class="principle">
+                    <h4>DRY (Don't Repeat Yourself)</h4>
+                    <p>Recuerda que el código duplicado es más difícil y costoso de mantener.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Principios SOLID</h2>
+    <div class="grid-container">
+        <div class="solid-principle">
+            <h3>Single Responsibility Principle (SRP)</h3>
+            <p>Una clase debe tener una sola razón para cambiar.</p>
+        </div>
+        
+        <div class="solid-principle">
+            <h3>Open/Closed Principle (OCP)</h3>
+            <p>Las clases deben estar abiertas a la extensión, pero cerradas a la modificación.</p>
+        </div>
+        
+        <div class="solid-principle">
+            <h3>Liskov Substitution Principle (LSP)</h3>
+            <p>Las subclases deben ser sustituibles por sus clases base sin producir resultados extraños.</p>
+        </div>
+        
+        <div class="solid-principle">
+            <h3>Interface Segregation Principle (ISP)</h3>
+            <p>Es mejor tener muchas interfaces específicas del cliente que una interfaz de propósito general.</p>
+        </div>
+        
+        <div class="solid-principle">
+            <h3>Dependency Inversion Principle (DIP)</h3>
+            <p>Las clases deben depender de interfaces o clases abstractas, no de clases concretas.</p>
+        </div>
+    </div>
+    
+    <h2>Enfoques de Diseño</h2>
+    <div class="grid-container">
+        <div class="card">
+            <div class="card-header">Clean Architecture</div>
+            <div class="card-body">
+                <p>Enfoque que busca separar las preocupaciones del negocio de las preocupaciones técnicas, basándose en los principios SOLID, capas de abstracción y patrones de diseño.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Domain-Driven Design (DDD)</div>
+            <div class="card-body">
+                <p>Metodología fundamental para el trabajo con microservicios, que ayuda a comprender el negocio e identificar los límites de los dominios.</p>
+                <span class="tag">Dominio</span>
+                <span class="tag">Contextos Delimitados</span>
+                <span class="tag">Lenguaje Ubicuo</span>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Pruebas de Software</h2>
+    <div class="grid-container">
+        <div class="card">
+            <div class="card-header">Pruebas Unitarias</div>
+            <div class="card-body">
+                <p>La práctica número uno en la construcción de software, expone problemas potenciales al principio del proceso.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">BDD (Desarrollo Impulsado por el Comportamiento)</div>
+            <div class="card-body">
+                <p>Enfoque centrado en el comportamiento y las expectativas de los usuarios.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">TDD (Desarrollo Basado en Pruebas)</div>
+            <div class="card-body">
+                <p>Mejora la calidad del software y el tiempo de comercialización al ejecutar pruebas definidas de forma continua.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Pruebas de Seguridad</div>
+            <div class="card-body">
+                <p>Incorporar principios y buenas prácticas de seguridad en todas las etapas del ciclo de vida del software.</p>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Entrega Continua e Infraestructura</h2>
+    <div class="grid-container">
+        <div class="card">
+            <div class="card-header">CI/CD</div>
+            <div class="card-body">
+                <p>Integración Continua / Despliegue Continuo: Permite la integración e implementación frecuente de cambios.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Arquitectura</div>
+            <div class="card-body">
+                <p>Microservicios vs. Monolitos: Tendencia creciente hacia microservicios por su flexibilidad.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Infraestructura como Código (IaC)</div>
+            <div class="card-body">
+                <p>Permite crear, administrar y modificar la infraestructura en la nube usando código.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">DevSecOps</div>
+            <div class="card-body">
+                <p>Implica comprender las preocupaciones de seguridad y priorizar estrategias de ciberseguridad.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Resumen basado en el documento "El diseño de software" - Mejores prácticas y principios</p>
+        <p>No se encontraron referencias directas a IEEE en las definiciones proporcionadas</p>
+    </footer>
+</body>
+</html>
